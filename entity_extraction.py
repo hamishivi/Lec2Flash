@@ -83,7 +83,7 @@ def extract_verb_relations(text: str) -> List[str]:
                     verb_idx = idx
             sent_a = " ".join([t.text for t in token.head.sent[:verb_idx]])
             sent_b = " ".join([t.text for t in token.head.sent[verb_idx+1:]])
-            relations.append((sent_a, sent_b, token.head.text))
+            relations.append((sent_a, sent_b, f"VERB: {token.head.text}"))
     return relations
 
 def extract_preposition_relations(text: str) -> List[str]:
@@ -94,7 +94,7 @@ def extract_preposition_relations(text: str) -> List[str]:
     relations = []
     for token in doc.noun_chunks:
         if token.root.dep_ == "pobj" and token.root.head.dep_ == "prep":
-            relations.append((" ".join([t.text for t in token.sent]), token.text.strip(), token.root.head.text))
+            relations.append((" ".join([t.text for t in token.sent]), token.text.strip(), f"PREP: {token.root.head.text}"))
     return relations
 
 def cleanup(relations: List[str]) -> List[str]:
