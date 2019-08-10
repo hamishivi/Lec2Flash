@@ -4,6 +4,29 @@ from typing import List, Tuple
 
 nlp = spacy.load("en_core_web_lg")
 
+from tokenize import NAME, INDENT, DEDENT, tokenize
+
+def parse(text):
+    stack = [[]]
+    lastindent = len(stack)
+
+    def push_new_list():
+        stack[-1].append([])
+        stack.append(stack[-1][-1])
+        return len(stack)
+
+    for t in tokenize(text):
+        if t.type == NAME:
+            if lastindent != len(stack):
+                stack.pop()
+                lastindent = push_new_list()
+            stack[-1].append(t.string) # add to current list
+        elif t.type == INDENT:
+            lastindent = push_new_list()
+        elif t.type == DEDENT:
+            stack.pop()
+    return stack[-1]
+
 def load_file(filename: str) -> List[str]:
     """
     Helper function for loading a file.
@@ -21,41 +44,26 @@ def check_def_line(line: str, symbol: str) -> List[str]:
         return [(line.split(symbol)[0].strip(), line.split(symbol)[1].strip(), "definition")]
     return []
 
-def dot_points(lines: List[str], cur_line: int, cur_indent: int, head: str) -> Tuple[List[str], int]:
-    """
-    recursive method for getting dot point hierarchies
-    """
+def dot_points(lines: List[str]) -> Tuple[List[str], int]:
     relations = []
-    while cur_line < len(lines):
-        line = lines[cur_line]
+    stack = []
+    cur_indent = 0
+    lines = [l.replace("*", " ") for l in lines]
+    for idx, line in enumerate(lines):
         indentation = len(line) - len(line.lstrip())
+        # clear stack if at indent 0
+        if indentation == 0:
+            cur_indent = 0
+            stack = []
         if indentation > cur_indent:
-            sub_r, new_line = dot_points(lines, cur_line, indentation, lines[cur_line-1])
-            relations += sub_r
-            cur_line = new_line
-        if indentation < cur_indent:
-            return relations, cur_line
-        if not (line.strip().startswith('-') or line.strip().startswith('*')):
-            return relations, cur_line
-        if cur_line < len(lines):
-            relations.append((lines[cur_line].strip(), head.strip(), 'inside'))
-        cur_line += 1
-    return relations, cur_line
-        
-def extract_dot_point_pattern(lines: List[str]) -> List[str]:
-    """
-    Entry method for gathering dot point hierarchies as relations.
-    """
-    relations = []
-    idx = 0
-    while idx < len(lines):
-        line = lines[idx]
-        indentation = len(line) - len(line.lstrip())
-        if (line.strip().startswith('-') or line.strip().startswith('*')):
-            sub_r, new_idx = dot_points(lines, idx, indentation, lines[idx-1])
-            relations += sub_r
-            idx = new_idx
-        idx += 1
+            stack.append(lines[idx-1])
+            cur_indent = indentation
+        elif indentation < cur_indent:
+            cur_indent = indentation
+            if len(stack) > 0:
+                stack.pop()
+        if len(stack) > 0 and stack[-1]:
+            relations.append((line, stack[-1], 'inside'))
     return relations
 
 def extract_defn_pattern(line: str) -> List[str]:
@@ -130,7 +138,7 @@ def get_relations(text: str, text_as_lines: List[str]) -> List[str]:
     """
     relations = []
     # get dot point facts
-    relations += extract_dot_point_pattern([l for l in text_as_lines])
+    relations += dot_points([l for l in text_as_lines])
     # defns
     for l in text_as_lines:
         relations += extract_defn_pattern(l)
@@ -145,7 +153,6 @@ def get_relations(text: str, text_as_lines: List[str]) -> List[str]:
 
 if __name__ == "__main__":
     lines = load_file('notes.txt')
-    text = "".join(lines)
+    text = "\n".join(lines)
     for r in get_relations(text, lines):
         print(r)
-   
