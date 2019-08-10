@@ -10,6 +10,10 @@ app = Flask(__name__)
 def index() -> str:
     return render_template('form.html')
 
+@app.route('/viz')
+def viz() -> str:
+    return render_template('viz.html')
+
 @app.route('/process-file', methods=['POST'])
 def process_file() -> str:
     string = request.files['file'].stream.read().decode('utf-8')
