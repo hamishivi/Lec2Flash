@@ -87,6 +87,14 @@ def extract_verb_relations(text):
             relations.append((sent_a, sent_b, token.head.text))
     return relations
 
+def extract_preposition_relations(text):
+    doc = nlp(text)
+    relations = []
+    for token in doc.noun_chunks:
+        if token.root.dep_ == "pobj" and token.root.head.dep_ == "prep":
+            relations.append((" ".join([t.text for t in token.sent]), token.text.strip(), token.root.head.text))
+    return relations
+
 def extract_entity_relations(text):
     doc = nlp(text)
     # Merge entities and noun chunks into one token
@@ -129,8 +137,8 @@ def get_relations(text, text_as_lines):
         relations += extract_defn_pattern(l)
     # verbs
     relations += extract_verb_relations(text)
-    # ai
-    relations += extract_entity_relations(text)
+    # prepositions
+    relations += extract_preposition_relations(text)
     # filter empty relations
     relations = [r for r in relations if r[0] and r[1] and r[2]]
     relations = cleanup(relations)
