@@ -3,6 +3,10 @@
 <h1>G'day mate</h1>
 <form action="/process-file" method="post" enctype="multipart/form-data">
 	<input type="file" name="file" accept=".md,.txt"/>
-	<button>Submit</button>	
+	<button>Submit a Text or Markdown file</button>	
+</form>
+<form action="/process-image" method="post" enctype="multipart/form-data">
+	<input type="file" name="photo" accept=".png,.jpg"/>
+	<button>Submit an Image</button>	
 </form>
 {% endblock %}
