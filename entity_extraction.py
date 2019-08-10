@@ -107,11 +107,20 @@ def cleanup(relations: List[str]) -> List[str]:
         a = a.replace('\n', "")
         b = b.replace('\n', "")
         c = c.replace('\n', "")
-        a = re.sub('[\*\-"]', "", a).strip()
-        b = re.sub('[\*\-"]', "", b).strip()
-        c = re.sub('[\*\-"]', "", c).strip()
+        a = re.sub('[\*\-\"\']', "", a).strip()
+        b = re.sub('[\*\-\"\']', "", b).strip()
+        c = re.sub('[\*\-\"\']', "", c).strip()
         relations[idx] = (a, b, c)
-    return relations
+    # remove relations that aren;t good for questions
+    clean_relations = []
+    for r in relations:
+        a, b, c = r
+        if '(' in a or ')' in a or 'e.g' in a or len(a) > 150 or len(a.strip()) == 0:
+            continue
+        if '(' in b or ')' in b or 'e.g' in b or len(b) > 150 or len(b.strip()) == 0:
+            continue
+        clean_relations.append(r)
+    return clean_relations
 
 def get_relations(text: str, text_as_lines: List[str]) -> List[str]:
     """
