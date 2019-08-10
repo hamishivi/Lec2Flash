@@ -1,0 +1,8 @@
+{% extends "index.html" %}
+{% block content %}
+<h1>G'day mate</h1>
+<form action="/process-file" method="post" enctype="multipart/form-data">
+	<input type="file" name="file" accept=".md,.txt"/>
+	<button>Submit</button>	
+</form>
+{% endblock %}
