@@ -95,6 +95,7 @@ def extract_preposition_relations(text: str) -> List[str]:
     for token in doc.noun_chunks:
         if token.root.dep_ == "pobj" and token.root.head.dep_ == "prep":
             relations.append((" ".join([t.text for t in token.sent]), token.text.strip(), token.root.head.text))
+    return relations
 
 def cleanup(relations: List[str]) -> List[str]:
     """
