@@ -1,6 +1,6 @@
 from flask import Flask
 
-from flask import render_template, request
+from flask import render_template, request, Response
 from entity_extraction import get_relations
 from neo4j_work import driver, add_entity, make_match, wipeout, make_match
 
@@ -25,8 +25,17 @@ def process_file() -> str:
             session.write_transaction(add_entity, i)
     with driver.session() as session:
         questions = session.write_transaction(make_match)
-    # turn this into some html
-    html = ''
-    #for q in questions:
-    #html += f"QUESTION: <p contenteditable='true'> {q['QUESTION']} </p>, ANSWER: {q['ANSWER']}<br></br>"
     return render_template('output.html', questions=questions)
+
+@app.route("/download")
+def download():
+    with driver.session() as session:
+        questions = session.write_transaction(make_match)
+    export = 'QUESTION\tANSWER\n'
+    for question in questions:
+        export += f"{question['QUESTION']}\t{question['ANSWER']}\n"
+    return Response(
+        export,
+        mimetype="text/plain",
+        headers={"Content-disposition":
+                 "attachment; filename=export.txt"})
