@@ -1,0 +1,107 @@
+Types of subordinate clauses
+* adverbial clauses
+    * provide the situational context for the event or state described in a main clause
+* complement clauses
+    * arguments of (and therefore syntactically essential to) the clause in which they are embedded
+    * possible to replace with pronouns
+    * a lot like nouns, since they often fulfil similar grammatical relations
+* relative clauses
+    * behave like adjectives, usually modifiers of a noun phrase
+    * sometimes can be rendered as phrases given certain manipulations
+
+Characteristics of Subordinate Clauses
+* can differ a lot from language to language
+* the tighter the dependence between main and subordinate clause,  the less likely you will find intonation breaks
+* typically morphologically marked by some kind of subordinating particle or affix
+    * the subordinator may carry lexical content (contribute to meaning of the clause) or not, e.g. “I eat beats because they are in season” vs “I hope that I can go"
+* sometimes the subordinator can be omitted if it does not carry meaning (“I hope I can go”)
+* subordinate structures regularly use a non-finite form of the verb
+* languages also produce subordinate structures through nominalisation 
+    * in this case, the verb is transformed into a nominal through derivational morphology
+* often subordinate clauses use fewer constituents or different word order (german)
+* often the discourse function of a subordinate construction is one of backgrounding, explanation, or description.
+
+Adverbial Clauses
+* many languages do not use this at all, or very rarely
+* hard to classify since they have a breadth of meanings
+* Some uses:
+    * time
+        * provide information about the relative temporal ordering of events
+        * often choice of tense in construction is bound in some way by the tense of the main verb (think primary/secondary sequence in greek)
+        * not necessarily typical, although english has lots
+    * Location
+        * rare for a language to have a robust set of location subordinators, and instead PPs or relative clauses are used.
+        * e.g. “The police were digging where Jeffrey had planted a garden."
+    * Cause
+        * often useful to indicate cause or motive behind event (“Because x, John did y…. to say z”)
+        * some languages signal difference between enablement and purpose through the mood chosen
+    * Conditional
+        * “If you can’t beat them, join them!"
+        * real conditions = those that could potentially be fulfilled
+            * may be general truths, present situations, or past situations
+        * Unreal conditions = those that cannot be fulfilled
+            * may be hypotheticals or counterfactuals
+        * protasis = “if clause"
+        * apodosis = “then clause"
+        * the relative types in english (and most languages) are indicated by choices of tense/aspect/mood in protasis and apodosis
+    * concessive
+        * “Even though x, y"
+        * all languages seem to have some way to indicate contrast between propositions, although not all do so through subordinating structures
+        * in those that do use a subordinate structure, use of the subordinating particle appears to be the dominant way to do so
+    * unspecified relationship
+        * “Having done y, he did x"
+        * sometimes the logical connection between two clauses can be left unspecified and the reader/listener allowed to draw their own conclusions.
+
+Complement Clause
+* a clause that is an argument of a predicate, typically as a subject or direct object
+* “When you leave makes no difference to me” vs “I cannot believe that you ate the whole thing"
+* The clause within which the complement is embedding is called the matrix clause
+* complement clauses do not always occur as full clauses but instead may arise as phrases headed by non-finite verb forms such as infinites and participles
+* we can have multiple embedding of complements too: “I want [to believe [that you are right]]"
+* two main ways to signal dependency:
+    * complementiser (subordination particle)
+        * if language is VO, appears at beginning of clause, usually
+        * if language is OV, appears both complement initial and final
+        * uncommon, but has been found in middle of complement
+    * use of non-finite verb form
+    * complement type choice has been argued to reflect the semantic relationship of the complement to the matrix clause verb
+        * uses semantic criteria to rate verbs: high control -> low control
+            * from high to low: causation, attempt, knowledge, belief, report
+        * if a point along the scale on the lower end is related to a certain syntactic structure, anything on the left (with higher control) will not be associated with a less integrated structure
+        * e.g. if a language uses infinitive to encode the complements of belief verbs, you would not expect causation verbs to use finite verbs with complements
+        * however, this tendency is violated by languages, including english. As such it is nothing more than a general tendency
+        * there is empirical support, though, and there is various literature examining this further!
+
+Relative Clauses
+* also called adjective clauses
+* typically found as modifiers of a noun
+* entity being modified by noun = head noun or relativised noun
+* if relative clauses are introduced by a special word, they are called relativises or relative pronouns (if the pronoun specifies some nominal properties)
+* restrictive vs non-restrictive relative clauses
+    * restrictive = restricts noun to be a certain thing (e.g. “My bro who lives next to me called yesterday” - you are specifying one bro out of many)
+    * non-restrictive = purely descriptive (e.g. “My bro, who lives next to me, called yesterday!” - you are just describing the bro)
+* relativisation strategies
+    * presence of relativisor is not necessary! Japanese just used word order.
+    * VO languages use noun + relative clause order
+    * OV languages use both orders with a weak preference for noun + relative clause ordering
+    * don’t even need head noun of a relative clause (as in greek - for indefinite constructions)
+    * relativised noun if often just ‘gapped’ - there is a gap where the noun would have been
+        * another option is to indicate the noun by including a personal pronoun in the relative clause
+        * both strategies can be used by one languages
+    * what nominals are allowed to be relativised can change
+        * english allows a lot of constituents to be relativised
+        * many languages only allow relativisation of a subset of these, e.g. just subject
+        * We get the Noun Phrase Accessibility Hierarchy from this:
+            * subject > direct object > oblique > possessor
+            * some exceptions do apply if more than one strategy is used for relativisation (as in certain strategies lie at different places in the hierarchy)
+            * we have to make two changes to the hierarchy:
+                * the subject is always relativizable
+                * a given relativisation strategy will cover a contiguous portion of the hierarchy
+* Preposition stranding
+    * in english, if relativisation of a noun occurs, the preposition associated with it may appear in its conventional position within the adjective clause, or before the relative pronoun (if the latter, this is called pipe-piping)
+        * the first option is unusual among languages
+* some languages have constructions similar but not identical to relativisation
+    * for example, participle phrase usage
+    * in general, if a language tends toward using nonfinite verbs for other embedded structures (such as adverbials and complements), then there is sufficient grounds to consider such constructions relative clauses
+    * if there is abundant usage of finite clauses in embedded structures, participle modifiers are best treated independent of relative clauses
+        * e.g. “going into the store” would not be considered a type of relative clause in english!
