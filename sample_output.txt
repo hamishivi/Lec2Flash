@@ -197,8 +197,6 @@
 ('the subject', 'always relativizable', 'VERB: is')
 ('a given relativisation strategy will', 'a contiguous portion of the hierarchy', 'VERB: cover')
 ('Preposition', '', 'VERB: stranding')
-('in english , if relativisation of a noun', ', the preposition associated with it may appear in its conventional position within the adjective clause , or before the relative pronoun ( if the latter , this is called pipe  piping )', 'VERB: occurs')
-('in english , if relativisation of a noun occurs , the preposition associated with it may', 'in its conventional position within the adjective clause , or before the relative pronoun ( if the latter , this is called pipe  piping )', 'VERB: appear')
 ('in english , if relativisation of a noun occurs , the preposition associated with it may appear in its conventional position within the adjective clause , or before the relative pronoun ( if the latter , this is', 'pipe  piping )', 'VERB: called')
 ('the first option', 'unusual among languages', 'VERB: is')
 ('some languages', 'constructions similar but not identical to relativisation', 'VERB: have')
