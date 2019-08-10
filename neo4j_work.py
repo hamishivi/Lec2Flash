@@ -1,8 +1,39 @@
 from neo4j import GraphDatabase
+from spacy.lemmatizer import Lemmatizer
+from spacy.lang.en import LEMMA_INDEX, LEMMA_EXC, LEMMA_RULES
+import spacy
+
+lemmatizer = Lemmatizer(LEMMA_INDEX, LEMMA_EXC, LEMMA_RULES)
+nlp = spacy.load("en_core_web_lg")
 
 driver = GraphDatabase.driver("bolt://localhost:7687",
                               auth=("neo4j", "password"))
 
+
+# some nice utils for dealing with text.
+# this doesnt really make singular, rather it lemmatizes things
+# but for nouns this is essentially the same.
+# doesnt work for 'protasis' and 'apodosis' 
+#   turns them into 'protasi' and 'apodosi'...
+def make_singular(text):
+    doc = nlp(text)
+    s = ''
+    for token in doc:
+        if token.pos_ == "NOUN":
+            s += f"{lemmatizer(token.text, token.pos_)[0]} "
+        else:
+            s += token.text + ' '
+    return s.strip()
+
+# this is to check for the common pattern: "are <VERB>" and remove them
+# these are common due to how we are creating questions
+def remove_are_verb(text):
+    doc = nlp(text)
+    for idx, token in enumerate(doc):
+        if token.text == "are":
+            if doc[idx+1].pos_ == "VERB":
+                return text.replace("What are", "What")
+    return text
 
 def add_entity(tx, data):
     """ ASSUMPTIONS:
@@ -59,6 +90,11 @@ def make_match(tx):
         elif entry[2].startswith("PREP: "):
             # TODO: all the prep entries seem pretty broken tbh
             continue
+    # quick clean-up
+    for q in qs:
+        q["QUESTION"] = remove_are_verb(q["QUESTION"])
+        if 'What is the definition of' in q["QUESTION"]:
+            q["QUESTION"] = make_singular(q["QUESTION"])
     return qs
 
 

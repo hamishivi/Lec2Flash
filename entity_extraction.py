@@ -1,5 +1,4 @@
 import spacy
-from spacy import displacy
 import re
 from typing import List, Tuple
 
@@ -107,9 +106,12 @@ def cleanup(relations: List[str]) -> List[str]:
         a = a.replace('\n', "")
         b = b.replace('\n', "")
         c = c.replace('\n', "")
-        a = re.sub('[\*\-\"\']', "", a).strip()
-        b = re.sub('[\*\-\"\']', "", b).strip()
-        c = re.sub('[\*\-\"\']', "", c).strip()
+        a = re.sub('[\*\-\"\'“]', "", a).strip()
+        b = re.sub('[\*\-\"\'“]', "", b).strip()
+        c = re.sub('[\*\-\"\'“]', "", c).strip()
+        a = a.lower()
+        b = b.lower()
+        c = c.lower()
         relations[idx] = (a, b, c)
     # remove relations that aren;t good for questions
     clean_relations = []
