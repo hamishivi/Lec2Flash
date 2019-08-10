@@ -73,6 +73,28 @@ def filter_spans(spans):
             seen_tokens.update(range(span.start, span.end))
     return result
 
+def extract_verb_relations(text):
+    relations = []
+    doc = nlp(text)
+    for token in doc:
+        if 'subj' in token.dep_:
+            verb_idx = 0
+            for idx, sent_tok in enumerate(token.head.sent):
+                if sent_tok.text == token.head.text:
+                    verb_idx = idx
+            sent_a = " ".join([t.text for t in token.head.sent[:verb_idx]])
+            sent_b = " ".join([t.text for t in token.head.sent[verb_idx+1:]])
+            relations.append((sent_a, sent_b, token.head.text))
+    return relations
+
+def extract_preposition_relations(text):
+    doc = nlp(text)
+    relations = []
+    for token in doc.noun_chunks:
+        if token.root.dep_ == "pobj" and token.root.head.dep_ == "prep":
+            relations.append((" ".join([t.text for t in token.sent]), token.text.strip(), token.root.head.text))
+    return relations
+
 def extract_entity_relations(text):
     doc = nlp(text)
     # Merge entities and noun chunks into one token
@@ -92,6 +114,20 @@ def extract_entity_relations(text):
             relations.append((token.head.head.text.strip(), token.text.strip(), 'prep'))
     return relations
 
+# clean up our shit
+def cleanup(relations):
+    for idx, r in enumerate(relations):
+        a, b, c = r
+        # remove star
+        a = a.replace('\n', "")
+        b = b.replace('\n', "")
+        c = c.replace('\n', "")
+        a = re.sub('[\*\-"]', "", a).strip()
+        b = re.sub('[\*\-"]', "", b).strip()
+        c = re.sub('[\*\-"]', "", c).strip()
+        relations[idx] = (a, b, c)
+    return relations
+
 def get_relations(text, text_as_lines):
     relations = []
     # get dot point facts
@@ -99,10 +135,13 @@ def get_relations(text, text_as_lines):
     # defns
     for l in text_as_lines:
         relations += extract_defn_pattern(l)
-    # ai
-    relations += extract_entity_relations(text)
+    # verbs
+    relations += extract_verb_relations(text)
+    # prepositions
+    relations += extract_preposition_relations(text)
     # filter empty relations
     relations = [r for r in relations if r[0] and r[1] and r[2]]
+    relations = cleanup(relations)
     return relations
 
 if __name__ == "__main__":
