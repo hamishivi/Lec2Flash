@@ -1,29 +1,31 @@
 import spacy
 from spacy import displacy
 import re
-
-class Entity():
-    def __init__(self, text, head, relation):
-        self.text = text
-        self.head = head
-        self.relation = relation
-
+from typing import List, Tuple
 
 nlp = spacy.load("en_core_web_lg")
 
-def load_file(filename):
+def load_file(filename: str) -> List[str]:
+    """
+    Helper function for loading a file.
+    """
     with open(filename, 'r') as f:
         return f.readlines()
 
 # basic definition checker
-def check_def_line(line, symbol):
+def check_def_line(line: str, symbol: str) -> List[str]:
+    """
+    Checks if a line of text contains a definition
+    """
     split_line = line.split(symbol)
     if (len(split_line) == 2 and split_line[0] and split_line[1]):
         return [(line.split(symbol)[0].strip(), line.split(symbol)[1].strip(), "definition")]
     return []
 
-# recursive method for getting dot point hierarchies
-def dot_points(lines, cur_line, cur_indent, head):
+def dot_points(lines: List[str], cur_line: int, cur_indent: int, head: str) -> Tuple[List[str], int]:
+    """
+    recursive method for getting dot point hierarchies
+    """
     relations = []
     while cur_line < len(lines):
         line = lines[cur_line]
@@ -41,7 +43,10 @@ def dot_points(lines, cur_line, cur_indent, head):
         cur_line += 1
     return relations, cur_line
         
-def extract_dot_point_pattern(lines):
+def extract_dot_point_pattern(lines: List[str]) -> List[str]:
+    """
+    Entry method for gathering dot point hierarchies as relations.
+    """
     relations = []
     idx = 0
     while idx < len(lines):
@@ -54,26 +59,20 @@ def extract_dot_point_pattern(lines):
         idx += 1
     return relations
 
-def extract_defn_pattern(line):
+def extract_defn_pattern(line: str) -> List[str]:
+    """
+    Extracts definition relations.
+    """
     relations = []
     relations += check_def_line(line, "= ")
     relations += check_def_line(line, "- ")
     relations += check_def_line(line, ": ")
     return relations
 
-def filter_spans(spans):
-    # Filter a sequence of spans so they don't contain overlaps
-    get_sort_key = lambda span: (span.end - span.start, span.start)
-    sorted_spans = sorted(spans, key=get_sort_key, reverse=True)
-    result = []
-    seen_tokens = set()
-    for span in sorted_spans:
-        if span.start not in seen_tokens and span.end - 1 not in seen_tokens:
-            result.append(span)
-            seen_tokens.update(range(span.start, span.end))
-    return result
-
-def extract_verb_relations(text):
+def extract_verb_relations(text: str) -> List[str]:
+    """
+    Extract relations between verb and sentence
+    """
     relations = []
     doc = nlp(text)
     for token in doc:
@@ -84,38 +83,24 @@ def extract_verb_relations(text):
                     verb_idx = idx
             sent_a = " ".join([t.text for t in token.head.sent[:verb_idx]])
             sent_b = " ".join([t.text for t in token.head.sent[verb_idx+1:]])
-            relations.append((sent_a, sent_b, token.head.text))
+            relations.append((sent_a, sent_b, f"VERB: {token.head.text}"))
     return relations
 
-def extract_preposition_relations(text):
+def extract_preposition_relations(text: str) -> List[str]:
+    """
+    Extract prepositions and their objects
+    """
     doc = nlp(text)
     relations = []
     for token in doc.noun_chunks:
         if token.root.dep_ == "pobj" and token.root.head.dep_ == "prep":
-            relations.append((" ".join([t.text for t in token.sent]), token.text.strip(), token.root.head.text))
+            relations.append((" ".join([t.text for t in token.sent]), token.text.strip(), f"PREP: {token.root.head.text}"))
     return relations
 
-def extract_entity_relations(text):
-    doc = nlp(text)
-    # Merge entities and noun chunks into one token
-    spans = list(doc.ents) + list(doc.noun_chunks)
-    spans = filter_spans(spans)
-    with doc.retokenize() as retokenizer:
-        for span in spans:
-            retokenizer.merge(span)
-    relations = []
-    for token in filter(lambda w: w.ent_type_, doc):
-        if token.dep_ in ("attr", "dobj"):
-            subject = [w for w in token.head.lefts if w.dep_ == "nsubj"]
-            if subject:
-                subject = subject[0]
-                relations.append((subject.text.strip(), token.text.strip(), 'object'))
-        elif token.dep_ == "pobj" and token.head.dep_ == "prep":
-            relations.append((token.head.head.text.strip(), token.text.strip(), 'prep'))
-    return relations
-
-# clean up our shit
-def cleanup(relations):
+def cleanup(relations: List[str]) -> List[str]:
+    """
+    Clean up text.
+    """
     for idx, r in enumerate(relations):
         a, b, c = r
         # remove star
@@ -128,7 +113,10 @@ def cleanup(relations):
         relations[idx] = (a, b, c)
     return relations
 
-def get_relations(text, text_as_lines):
+def get_relations(text: str, text_as_lines: List[str]) -> List[str]:
+    """
+    Extracts relations from text as a whole.
+    """
     relations = []
     # get dot point facts
     relations += extract_dot_point_pattern([l for l in text_as_lines])
