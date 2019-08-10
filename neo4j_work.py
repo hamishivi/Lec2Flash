@@ -1,10 +1,12 @@
 from neo4j import GraphDatabase
 from spacy.lemmatizer import Lemmatizer
+import language_check
 from spacy.lang.en import LEMMA_INDEX, LEMMA_EXC, LEMMA_RULES
 import spacy
 
 lemmatizer = Lemmatizer(LEMMA_INDEX, LEMMA_EXC, LEMMA_RULES)
 nlp = spacy.load("en_core_web_lg")
+tool = language_check.LanguageTool('en-US')
 
 driver = GraphDatabase.driver("bolt://localhost:7687",
                               auth=("neo4j", "password"))
@@ -46,6 +48,11 @@ def add_entity(tx, data):
            "MERGE (e1)-[:Related{text: $text_rel}]->(e2)",
            text1=entity1, text2=entity2, text_rel=relationship)
 
+# this changes the entire grammar... but it can be wrong! alot!
+# so use with caution...
+def full_grammar_check(text):
+    matches = tool.check(text)
+    return language_check.correct(text, matches)
 
 def make_match(tx):
     # trying some basic conditions for "inside:" what is/are?. What are seems
