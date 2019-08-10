@@ -1,6 +1,16 @@
 {% extends "index.html" %}
 {% block content %}
-<p>File recieved</p>
-<br></br>
-{{ string|safe }}
+{% if not questions %}
+<p>File not recieved</p>
+{% endif %}
+<ol>
+{% for q in questions %}
+<li>
+<article>
+	<p class="question" contenteditable> {{q['QUESTION']|safe}} </p>
+	<p class="answer" contenteditable> {{q['ANSWER']|safe}} </p>
+</article>
+</li>
+{% endfor %}
+</ul>
 {% endblock %}

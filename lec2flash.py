@@ -23,6 +23,6 @@ def process_file() -> str:
         questions = session.write_transaction(make_match)
     # turn this into some html
     html = ''
-    for q in questions:
-        html += f"QUESTION: <p contenteditable='true'> {q['QUESTION']} </p>, ANSWER: {q['ANSWER']}<br></br>"
-    return render_template('output.html', string=html)
+    #for q in questions:
+    #html += f"QUESTION: <p contenteditable='true'> {q['QUESTION']} </p>, ANSWER: {q['ANSWER']}<br></br>"
+    return render_template('output.html', questions=questions)

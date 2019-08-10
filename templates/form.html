@@ -1,8 +1,31 @@
 {% extends "index.html" %}
 {% block content %}
+
+<article>
 <h1>G'day mate</h1>
+<p>Upload some notes.
 <form action="/process-file" method="post" enctype="multipart/form-data">
-	<input type="file" name="file" accept=".md,.txt"/>
-	<button>Submit</button>	
+	<label for="upload-input" id="upload-label">
+		<i class="fas fa-upload"></i>
+		<span id="upload-msg"></span>
+	</label>
+	<input id="upload-input" type="file" name="file" accept=".md,.txt" required />
+	<input type="submit" />
 </form>
+</article>
+
+<script>
+
+function setFileName(path) {
+				document.getElementById("upload-msg").innerHTML = path.split("\\").pop();
+}
+
+var inputElem = document.getElementById("upload-input");
+
+setFileName(inputElem.value);
+
+document.getElementById("upload-input").onchange = function (e) {
+				setFileName(e.target.value);
+}
+</script>
 {% endblock %}
