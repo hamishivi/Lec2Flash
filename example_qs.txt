@@ -34,6 +34,11 @@ ANSWER:
 	'complement clauses
 
 QUESTION:
+	'arguments of ( and therefore syntactically essential to ) the clause in which they are embedded' what?
+ANSWER:
+	'possible to replace with pronouns
+
+QUESTION:
 	What are 'sometimes can be rendered as phrases given certain manipulations?
 ANSWER:
 	'relative clauses
@@ -559,6 +564,41 @@ ANSWER:
 	'purely descriptive (e.g. “My bro, who lives next to me, called yesterday!”  you are just describing the bro)
 
 QUESTION:
+	'The clause within which the complement is embedding is called' what?
+ANSWER:
+	'the matrix clause
+
+QUESTION:
+	'The clause within which the complement is embedding' what?
+ANSWER:
+	'is called the matrix clause
+
+QUESTION:
+	'complement clauses do not always occur' what?
+ANSWER:
+	'as full clauses but instead may arise as phrases headed by non  finite verb forms such as infinites and participles
+
+QUESTION:
+	'we can have' what?
+ANSWER:
+	'multiple embedding of complements too :
+
+QUESTION:
+	'“ I want' what?
+ANSWER:
+	'[ to believe [ that you are right ] ]
+
+QUESTION:
+	'“ I want [ to believe [ that you are' what?
+ANSWER:
+	'right ] ]
+
+QUESTION:
+	'if language is' what?
+ANSWER:
+	'VO , appears at beginning of clause , usually
+
+QUESTION:
 	What is the definition of 'don’t even need head noun of a relative clause (as in greek?
 ANSWER:
 	'for indefinite constructions)
@@ -568,4 +608,418 @@ QUESTION:
 ANSWER:
 	'there is a gap where the noun would have been
 
-[]
+QUESTION:
+	'provide the situational context for the event or state described' what?
+ANSWER:
+	'in a main clause
+
+QUESTION:
+	'a lot like nouns , since they often fulfil' what?
+ANSWER:
+	'similar grammatical relations
+
+QUESTION:
+	'the tighter the dependence between main and subordinate clause ,   the less likely you will find' what?
+ANSWER:
+	'intonation breaks
+
+QUESTION:
+	'the subordinator may carry' what?
+ANSWER:
+	'lexical content ( contribute to meaning of the clause ) or not , e.g. “
+
+QUESTION:
+	'I eat' what?
+ANSWER:
+	'beats because they are in season ” vs
+
+QUESTION:
+	'I eat beats because they are' what?
+ANSWER:
+	'in season ” vs
+
+QUESTION:
+	'I hope' what?
+ANSWER:
+	'that I can go
+
+QUESTION:
+	'sometimes the subordinator can be omitted' what?
+ANSWER:
+	'if it does not carry meaning ( “ I hope I can go ” )
+
+QUESTION:
+	'sometimes the subordinator can be omitted if it does not carry' what?
+ANSWER:
+	'meaning ( “ I hope I can go ” )
+
+QUESTION:
+	'sometimes the subordinator can be omitted if it does not carry meaning ( “ I hope' what?
+ANSWER:
+	'I can go ” )
+
+QUESTION:
+	'sometimes the subordinator can be omitted if it does not carry meaning ( “ I hope I can go' what?
+ANSWER:
+	'” )
+
+QUESTION:
+	'subordinate structures regularly use' what?
+ANSWER:
+	'a non  finite form of the verb
+
+QUESTION:
+	'languages also produce' what?
+ANSWER:
+	'subordinate structures through nominalisation
+
+QUESTION:
+	'in this case , the verb is transformed' what?
+ANSWER:
+	'into a nominal through derivational morphology
+
+QUESTION:
+	'often subordinate clauses use' what?
+ANSWER:
+	'fewer constituents or different word order ( german )
+
+QUESTION:
+	'often the discourse function of a subordinate construction is' what?
+ANSWER:
+	'one of backgrounding , explanation , or description .
+
+QUESTION:
+	'many languages do not use' what?
+ANSWER:
+	'this at all , or very rarely   hard to classify since they have a breadth of meanings
+
+QUESTION:
+	'many languages do not use this at all , or very rarely   hard to classify since they have' what?
+ANSWER:
+	'a breadth of meanings
+
+QUESTION:
+	'Some uses' what?
+ANSWER:
+	':
+
+QUESTION:
+	'provide information about the relative temporal ordering of events           often choice of tense in construction is bound' what?
+ANSWER:
+	'in some way by the tense of the main verb ( think primary / secondary sequence in greek )
+
+QUESTION:
+	'not necessarily typical , although english has' what?
+ANSWER:
+	'lots
+
+QUESTION:
+	'rare for a language to have a robust set of location subordinators , and instead PPs or relative clauses are used' what?
+ANSWER:
+	'.
+
+QUESTION:
+	'e.g. “ The police were digging' what?
+ANSWER:
+	'where Jeffrey had planted a garden .
+
+QUESTION:
+	'e.g. “ The police were digging where Jeffrey had planted' what?
+ANSWER:
+	'a garden .
+
+QUESTION:
+	'( “ Because x , John did' what?
+ANSWER:
+	'y … .
+
+QUESTION:
+	'some languages signal' what?
+ANSWER:
+	'difference between enablement and purpose through the mood chosen
+
+QUESTION:
+	'“ If you ca n’t beat' what?
+ANSWER:
+	'them , join them !
+
+QUESTION:
+	'Preposition stranding' what?
+ANSWER:
+	'
+
+QUESTION:
+	'english allows a lot of constituents to be relativised' what?
+ANSWER:
+	'
+
+QUESTION:
+	'what nominals are allowed to be relativised can change' what?
+ANSWER:
+	'
+
+QUESTION:
+	'if often just ‘ gapped ’  there is a gap where the noun would have been' what?
+ANSWER:
+	'
+
+QUESTION:
+	'Unreal conditions = those that can not be fulfilled' what?
+ANSWER:
+	'
+
+QUESTION:
+	'real conditions = those that could potentially be fulfilled' what?
+ANSWER:
+	'
+
+QUESTION:
+	'the relative types in english ( and most languages ) are indicated' what?
+ANSWER:
+	'by choices of tense / aspect / mood in protasis and apodosis
+
+QUESTION:
+	'all languages seem' what?
+ANSWER:
+	'to have some way to indicate contrast between propositions , although not all do so through subordinating structures
+
+QUESTION:
+	'all languages seem to have some way to indicate contrast between propositions , although not all do' what?
+ANSWER:
+	'so through subordinating structures
+
+QUESTION:
+	'in those that do use a subordinate structure , use' what?
+ANSWER:
+	'of the subordinating particle appears to be the dominant way to do so
+
+QUESTION:
+	'in those that do use a subordinate structure , use of the subordinating particle appears' what?
+ANSWER:
+	'to be the dominant way to do so
+
+QUESTION:
+	'“ Having done y , he did' what?
+ANSWER:
+	'x
+
+QUESTION:
+	'sometimes the logical connection between two clauses can be left' what?
+ANSWER:
+	'unspecified and the reader / listener allowed to draw their own conclusions .
+
+QUESTION:
+	'sometimes the logical connection between two clauses can be left unspecified and the reader / listener allowed' what?
+ANSWER:
+	'to draw their own conclusions .
+
+QUESTION:
+	'a clause that is' what?
+ANSWER:
+	'an argument of a predicate , typically as a subject or direct object
+
+QUESTION:
+	'When you leave' what?
+ANSWER:
+	'makes no difference to me ” vs
+
+QUESTION:
+	'I can not believe' what?
+ANSWER:
+	'that you ate the whole thing
+
+QUESTION:
+	'I can not believe that you ate' what?
+ANSWER:
+	'the whole thing
+
+QUESTION:
+	'OV languages use' what?
+ANSWER:
+	'both orders with a weak preference for noun + relative clause ordering
+
+QUESTION:
+	'another option is' what?
+ANSWER:
+	'to indicate the noun by including a personal pronoun in the relative clause
+
+QUESTION:
+	'both strategies can be used' what?
+ANSWER:
+	'by one languages
+
+QUESTION:
+	'what nominals are allowed' what?
+ANSWER:
+	'to be relativised can change
+
+QUESTION:
+	'english allows' what?
+ANSWER:
+	'a lot of constituents to be relativised
+
+QUESTION:
+	'many languages only allow' what?
+ANSWER:
+	'relativisation of a subset of these , e.g. just subject
+
+QUESTION:
+	'if language is' what?
+ANSWER:
+	'OV , appears both complement
+
+QUESTION:
+	'complement type choice has been argued' what?
+ANSWER:
+	'to reflect the semantic relationship of the complement to the matrix clause verb
+
+QUESTION:
+	'if a point along the scale on the lower end is related' what?
+ANSWER:
+	'to a certain syntactic structure , anything on the left ( with higher control ) will not be associated with a less integrated structure
+
+QUESTION:
+	'if a point along the scale on the lower end is related to a certain syntactic structure , anything on the left ( with higher control ) will not be associated' what?
+ANSWER:
+	'with a less integrated structure
+
+QUESTION:
+	'e.g. if a language uses' what?
+ANSWER:
+	'infinitive to encode the complements of belief verbs , you would not expect causation verbs to use finite verbs with complements
+
+QUESTION:
+	'e.g. if a language uses infinitive to encode the complements of belief verbs , you would not expect' what?
+ANSWER:
+	'causation verbs to use finite verbs with complements
+
+QUESTION:
+	'however , this tendency is violated' what?
+ANSWER:
+	'by languages , including english .
+
+QUESTION:
+	'As such it is' what?
+ANSWER:
+	'nothing more than a general tendency
+
+QUESTION:
+	'Relative Clauses   also called' what?
+ANSWER:
+	'adjective clauses
+
+QUESTION:
+	'if relative clauses are introduced' what?
+ANSWER:
+	'by a special word , they are called relativises or relative pronouns ( if the pronoun specifies some nominal properties )
+
+QUESTION:
+	'if relative clauses are introduced by a special word , they are called' what?
+ANSWER:
+	'relativises or relative pronouns ( if the pronoun specifies some nominal properties )
+
+QUESTION:
+	'if relative clauses are introduced by a special word , they are called relativises or relative pronouns ( if the pronoun specifies' what?
+ANSWER:
+	'some nominal properties )
+
+QUESTION:
+	'restrictive = restricts noun to be a certain thing ( e.g. “ My bro who lives' what?
+ANSWER:
+	'next to me called yesterday ”
+
+QUESTION:
+	'you are specifying' what?
+ANSWER:
+	'one bro out of many )
+
+QUESTION:
+	'non  restrictive = purely descriptive ( e.g. “ My bro , who lives' what?
+ANSWER:
+	'next to me , called yesterday !
+
+QUESTION:
+	'”  you are just describing' what?
+ANSWER:
+	'the bro )
+
+QUESTION:
+	'presence of relativisor is' what?
+ANSWER:
+	'not necessary !
+
+QUESTION:
+	'Japanese just used' what?
+ANSWER:
+	'word order .
+
+QUESTION:
+	'VO languages use' what?
+ANSWER:
+	'noun + relative clause order
+
+QUESTION:
+	'in english , if relativisation of a noun occurs , the preposition associated with it may appear in its conventional position within the adjective clause , or before the relative pronoun ( if the latter , this is called' what?
+ANSWER:
+	'pipe  piping )
+
+QUESTION:
+	'We get' what?
+ANSWER:
+	'the Noun Phrase Accessibility Hierarchy from this :
+
+QUESTION:
+	'subject > direct object > oblique' what?
+ANSWER:
+	'> possessor
+
+QUESTION:
+	'some exceptions do apply' what?
+ANSWER:
+	'if more than one strategy is used for relativisation ( as in certain strategies lie at different places in the hierarchy )
+
+QUESTION:
+	'some exceptions do apply if more than one strategy is used' what?
+ANSWER:
+	'for relativisation ( as in certain strategies lie at different places in the hierarchy )
+
+QUESTION:
+	'we have' what?
+ANSWER:
+	'to make two changes to the hierarchy :
+
+QUESTION:
+	'the subject is' what?
+ANSWER:
+	'always relativizable
+
+QUESTION:
+	'a given relativisation strategy will cover' what?
+ANSWER:
+	'a contiguous portion of the hierarchy
+
+QUESTION:
+	'the first option is' what?
+ANSWER:
+	'unusual among languages
+
+QUESTION:
+	'some languages have' what?
+ANSWER:
+	'constructions similar but not identical to relativisation
+
+QUESTION:
+	'in general , if a language tends' what?
+ANSWER:
+	'toward using nonfinite verbs for other embedded structures ( such as adverbials and complements ) , then there is sufficient grounds to consider such constructions relative clauses
+
+QUESTION:
+	'if there is abundant usage of finite clauses in embedded structures , participle modifiers are best treated' what?
+ANSWER:
+	'independent of relative clauses
+
+QUESTION:
+	'e.g. “ going into the store ” would not be considered' what?
+ANSWER:
+	'a type of relative clause in english !
+
