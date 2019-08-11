@@ -85,7 +85,7 @@ def make_match(tx):
                            entry[1])
                        }
                       )
-        elif entry[2].startswith("VERB: "):
+        elif entry[2].startswith("verb: "):
             qs.append({"QUESTION":
                        question_gen_dict["VERB: "]["QUESTION"].format(
                             entry[0], entry[2][len("VERB: "):]),
@@ -94,7 +94,7 @@ def make_match(tx):
                            entry[1])
                        }
                       )
-        elif entry[2].startswith("PREP: "):
+        elif entry[2].startswith("prep: "):
             # TODO: all the prep entries seem pretty broken tbh
             continue
     # quick clean-up

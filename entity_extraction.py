@@ -4,29 +4,6 @@ from typing import List, Tuple
 
 nlp = spacy.load("en_core_web_lg")
 
-from tokenize import NAME, INDENT, DEDENT, tokenize
-
-def parse(text):
-    stack = [[]]
-    lastindent = len(stack)
-
-    def push_new_list():
-        stack[-1].append([])
-        stack.append(stack[-1][-1])
-        return len(stack)
-
-    for t in tokenize(text):
-        if t.type == NAME:
-            if lastindent != len(stack):
-                stack.pop()
-                lastindent = push_new_list()
-            stack[-1].append(t.string) # add to current list
-        elif t.type == INDENT:
-            lastindent = push_new_list()
-        elif t.type == DEDENT:
-            stack.pop()
-    return stack[-1]
-
 def load_file(filename: str) -> List[str]:
     """
     Helper function for loading a file.
