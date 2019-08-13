@@ -25,3 +25,8 @@ You can then run the web app with:
 ``` ./run.sh```
 
 Remember to run Neo4j in the background while running this! You should be able to stop it with ```neo4j stop```.
+
+### Here's what it looks like in action!
+
+![Current Workflow](https://github.com/hamishivi/Lec2Flash/blob/master/current_workflow.gif)
+
