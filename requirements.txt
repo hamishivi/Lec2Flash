@@ -8,7 +8,7 @@ cymem==2.0.2
 Flask==1.1.1
 idna==2.8
 itsdangerous==1.1.0
-Jinja2==2.10.1
+Jinja2==2.11.3
 language-check==1.1
 MarkupSafe==1.1.1
 murmurhash==1.0.2
