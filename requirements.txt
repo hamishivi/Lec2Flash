@@ -30,7 +30,7 @@ srsly==0.0.7
 thinc==7.0.8
 torch==1.2.0
 tqdm==4.33.0
-urllib3==1.25.3
+urllib3==1.26.5
 wasabi==0.2.2
 Werkzeug==0.15.5
 https://github.com/explosion/spacy-models/releases/download/en_core_web_lg-2.1.0/en_core_web_lg-2.1.0.tar.gz
